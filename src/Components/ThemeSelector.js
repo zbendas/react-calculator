@@ -9,8 +9,6 @@ class ThemeSelector extends Component {
         this.keyOpen = this.keyOpen.bind(this);
         this.handleSelection = this.handleSelection.bind(this);
 
-        console.log(localStorage.getItem('theme'));
-
         this.state = {
             icon: "⮞",
             open: false,
@@ -34,6 +32,7 @@ class ThemeSelector extends Component {
 
     keyOpen(e) {
         if (e.keyCode === 32 || e.keyCode === 13) {
+            e.preventDefault();
             this.open();
         }
     }
@@ -49,11 +48,11 @@ class ThemeSelector extends Component {
     render() {
         return (
             <div className={"themed"}>
-                <span id={"openSidebar"}
+                <button id={"openSidebar"}
                       className={this.state.open ? "close" : ""}
                       onClick={this.open} onKeyDown={this.keyOpen}
                       tabIndex={"0"}>{this.state.icon}
-                </span>
+                </button>
                 <section id={"themeSidebar"}>
                     <h1>Themes</h1>
                     <fieldset>

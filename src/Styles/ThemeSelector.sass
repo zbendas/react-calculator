@@ -128,6 +128,10 @@
                     border-color: themes.$phosphor1
 
 #openSidebar
+    appearance: none
+    display: inline
+    background: none
+    border: none
     position: absolute
     top: 50%
     transform: translate(0, -50%)
@@ -136,61 +140,42 @@
     font-size: 64px
     cursor: pointer
     @include themes.default()
-        color: color.adjust(themes.$default5, $lightness: 10%)
+        color: color.adjust(themes.$default2, $lightness: -10%)
     @include themes.eggplant()
-        color: themes.$eggplant5
+        color: themes.$eggplant3
     @include themes.fuchsia()
-        color: color.adjust(themes.$fuchsia5, $lightness: 5%)
+        color: themes.$fuchsia4
     @include themes.goth()
-        color: color.adjust(themes.$goth5, $lightness: 10%)
+        color: themes.$goth3
     @include themes.lawn()
-        color: color.adjust(themes.$lawn5, $lightness: -15%)
+        color: themes.$lawn3
     @include themes.neapolitan()
         color: themes.$neapolitan5
     @include themes.sky()
-        color: color.adjust(themes.$sky5, $lightness: -15%)
+        color: themes.$sky4
     @include themes.sunset()
-        color: color.adjust(themes.$sunset5, $lightness: -40%)
+        color: color.adjust(themes.$sunset5, $lightness: -20%)
     @include themes.phosphor()
         color: themes.$phosphor3
     line-height: 25px
-    &:hover
-        @include themes.default()
-            color: color.adjust(themes.$default5, $lightness: 15%)
-        @include themes.eggplant()
-            color: color.adjust(themes.$eggplant5, $lightness: 5%)
-        @include themes.fuchsia()
-            color: color.adjust(themes.$fuchsia5, $lightness: 10%)
-        @include themes.goth()
-            color: color.adjust(themes.$goth5, $lightness: 15%)
-        @include themes.lawn()
-            color: color.adjust(themes.$lawn5, $lightness: -10%)
-        @include themes.neapolitan()
-            color: color.adjust(themes.$neapolitan5, $lightness: 5%)
-        @include themes.sky()
-            color: color.adjust(themes.$sky5, $lightness: -10%)
-        @include themes.sunset()
-            color: color.adjust(themes.$sunset5, $lightness: -35%)
-        @include themes.phosphor()
-            color: color.adjust(themes.$phosphor3, $lightness: 5%)
-    &:focus
+    &:hover, &:focus
         outline: none
         @include themes.default()
-            color: color.adjust(themes.$default5, $lightness: 20%)
+            color: color.adjust(themes.$default2, $lightness: 20%)
         @include themes.eggplant()
-            color: color.adjust(themes.$eggplant5, $lightness: 10%)
+            color: themes.$eggplant2
         @include themes.fuchsia()
-            color: color.adjust(themes.$fuchsia5, $lightness: 15%)
+            color: color.adjust(themes.$fuchsia4, $lightness: 20%)
         @include themes.goth()
-            color: color.adjust(themes.$goth5, $lightness: 20%)
+            color: themes.$goth2
         @include themes.lawn()
-            color: color.adjust(themes.$lawn5, $lightness: -5%)
+            color: themes.$lawn2
         @include themes.neapolitan()
             color: color.adjust(themes.$neapolitan5, $lightness: 10%)
         @include themes.sky()
-            color: color.adjust(themes.$sky5, $lightness: -5%)
+            color: themes.$sky2
         @include themes.sunset()
-            color: color.adjust(themes.$sunset5, $lightness: -30%)
+            color: themes.$sunset5
         @include themes.phosphor()
             color: color.adjust(themes.$phosphor3, $lightness: 10%)
     &.close

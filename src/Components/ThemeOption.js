@@ -21,7 +21,7 @@ class ThemeOption extends Component {
     render() {
         return (
             <div tabIndex={this.props.tabbable ? "0" : "-1"} onClick={this.handleChange} onKeyDown={this.handleKeyDown}>
-                <input type={"radio"} checked={this.props.checked} tabIndex={"-1"}/>
+                <input type={"radio"} checked={this.props.checked} onChange={this.handleChange} tabIndex={"-1"}/>
                 <label tabIndex={"-1"}>{this.props.text}</label>
             </div>
         );

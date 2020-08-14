@@ -152,10 +152,12 @@ body
             font-family: monospace
             font-size: 64px
             color: white
-            @include themes.phosphor()
-                color: themes.$phosphor1
+            @include themes.goth()
+                color: themes.$goth2
             @include themes.neapolitan()
                 color: themes.$neapolitan5
+            @include themes.phosphor()
+                color: themes.$phosphor1
 
             &::selection
                 @include themes.default()
