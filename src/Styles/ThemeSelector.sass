@@ -1,0 +1,198 @@
+@use 'sass:color'
+@use 'themes'
+
+#themeSidebar
+    height: 100%
+    width: 0
+    position: fixed
+    z-index: 1
+    top: 0
+    left: 0
+    @include themes.default()
+        background: color.adjust(themes.$default5, $lightness: 10%)
+    @include themes.eggplant()
+        background: themes.$eggplant5
+    @include themes.fuchsia()
+        background: color.adjust(themes.$fuchsia5, $lightness: 5%)
+    @include themes.goth()
+        background: color.adjust(themes.$goth5, $lightness: 10%)
+    @include themes.lawn()
+        background: color.adjust(themes.$lawn5, $lightness: -15%)
+    @include themes.neapolitan()
+        background: themes.$neapolitan5
+    @include themes.sky()
+        background: color.adjust(themes.$sky5, $lightness: -15%)
+    @include themes.sunset()
+        background: color.adjust(themes.$sunset5, $lightness: -40%)
+    @include themes.phosphor()
+        background: themes.$phosphor5
+    overflow-x: hidden
+    padding-top: 40px
+    transition: all 0.25s
+    display: flex
+    flex-direction: column
+    align-items: center
+    font-family: "Recursive", sans-serif
+    color: white
+    h1
+        font-size: 32px
+        text-decoration: underline
+    fieldset
+        margin: 0
+        padding: 0
+        border: none
+        div
+            &:hover
+                @include themes.default()
+                    color: themes.$default4
+                @include themes.eggplant()
+                    color: themes.$eggplant2
+                @include themes.fuchsia()
+                    color: themes.$fuchsia2
+                @include themes.goth()
+                    color: themes.$goth2
+                @include themes.lawn()
+                    color: themes.$lawn2
+                @include themes.neapolitan()
+                    color: themes.$neapolitan1
+                @include themes.sky()
+                    color: themes.$sky2
+                @include themes.sunset()
+                    color: themes.$sunset2
+                @include themes.phosphor()
+                    color: themes.$phosphor1
+            &:focus
+                outline: none
+                color: color.adjust(white, $lightness: -40%)
+                & input[type="radio"] + label:before
+                    @include themes.default()
+                        background: themes.$default4
+                    @include themes.eggplant()
+                        background: themes.$eggplant2
+                    @include themes.fuchsia()
+                        background: themes.$fuchsia2
+                    @include themes.goth()
+                        background: themes.$goth2
+                    @include themes.lawn()
+                        background: themes.$lawn2
+                    @include themes.neapolitan()
+                        background: themes.$neapolitan1
+                    @include themes.sky()
+                        background: themes.$sky2
+                    @include themes.sunset()
+                        background: themes.$sunset2
+                    @include themes.phosphor()
+                        background: themes.$phosphor1
+        label
+            text-transform: capitalize
+            font-size: 24px
+            margin: 15px 5px
+            position: relative
+            cursor: pointer
+            &:focus
+                outline: none
+            &:before
+                position: absolute
+                top: 8px
+                left: -25px
+                width: 9px
+                height: 9px
+                border-radius: 9px
+                border: 3px solid white
+                content: ""
+                background: white
+        input[type="radio"]
+            opacity: 0
+            position: fixed
+            width: 0
+            &:checked + label:before
+                @include themes.default()
+                    background: themes.$default5
+                @include themes.eggplant()
+                    background: themes.$eggplant5
+                @include themes.fuchsia()
+                    background: themes.$fuchsia5
+                @include themes.goth()
+                    background: themes.$goth5
+                @include themes.lawn()
+                    background: themes.$lawn5
+                @include themes.neapolitan()
+                    background: themes.$neapolitan1
+                    border-color: color.adjust(themes.$neapolitan1, $lightness: -20%)
+                @include themes.sky()
+                    background: themes.$sky5
+                @include themes.sunset()
+                    background: themes.$sunset5
+                @include themes.phosphor()
+                    background: themes.$phosphor2
+                    border-color: themes.$phosphor1
+
+#openSidebar
+    position: absolute
+    top: 50%
+    transform: translate(0, -50%)
+    left: 0
+    padding: 10px
+    font-size: 64px
+    cursor: pointer
+    @include themes.default()
+        color: color.adjust(themes.$default5, $lightness: 10%)
+    @include themes.eggplant()
+        color: themes.$eggplant5
+    @include themes.fuchsia()
+        color: color.adjust(themes.$fuchsia5, $lightness: 5%)
+    @include themes.goth()
+        color: color.adjust(themes.$goth5, $lightness: 10%)
+    @include themes.lawn()
+        color: color.adjust(themes.$lawn5, $lightness: -15%)
+    @include themes.neapolitan()
+        color: themes.$neapolitan5
+    @include themes.sky()
+        color: color.adjust(themes.$sky5, $lightness: -15%)
+    @include themes.sunset()
+        color: color.adjust(themes.$sunset5, $lightness: -40%)
+    @include themes.phosphor()
+        color: themes.$phosphor3
+    line-height: 25px
+    &:hover
+        @include themes.default()
+            color: color.adjust(themes.$default5, $lightness: 15%)
+        @include themes.eggplant()
+            color: color.adjust(themes.$eggplant5, $lightness: 5%)
+        @include themes.fuchsia()
+            color: color.adjust(themes.$fuchsia5, $lightness: 10%)
+        @include themes.goth()
+            color: color.adjust(themes.$goth5, $lightness: 15%)
+        @include themes.lawn()
+            color: color.adjust(themes.$lawn5, $lightness: -10%)
+        @include themes.neapolitan()
+            color: color.adjust(themes.$neapolitan5, $lightness: 5%)
+        @include themes.sky()
+            color: color.adjust(themes.$sky5, $lightness: -10%)
+        @include themes.sunset()
+            color: color.adjust(themes.$sunset5, $lightness: -35%)
+        @include themes.phosphor()
+            color: color.adjust(themes.$phosphor3, $lightness: 5%)
+    &:focus
+        outline: none
+        @include themes.default()
+            color: color.adjust(themes.$default5, $lightness: 20%)
+        @include themes.eggplant()
+            color: color.adjust(themes.$eggplant5, $lightness: 10%)
+        @include themes.fuchsia()
+            color: color.adjust(themes.$fuchsia5, $lightness: 15%)
+        @include themes.goth()
+            color: color.adjust(themes.$goth5, $lightness: 20%)
+        @include themes.lawn()
+            color: color.adjust(themes.$lawn5, $lightness: -5%)
+        @include themes.neapolitan()
+            color: color.adjust(themes.$neapolitan5, $lightness: 10%)
+        @include themes.sky()
+            color: color.adjust(themes.$sky5, $lightness: -5%)
+        @include themes.sunset()
+            color: color.adjust(themes.$sunset5, $lightness: -30%)
+        @include themes.phosphor()
+            color: color.adjust(themes.$phosphor3, $lightness: 10%)
+    &.close
+        transform: scaleX(-1)
+        transition: 0.125s

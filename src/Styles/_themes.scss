@@ -1,0 +1,110 @@
+@use 'sass:color';
+@import url('https://fonts.googleapis.com/css2?family=Recursive:wght@600&display=swap');
+
+@mixin default(){
+        .theme-default & {
+                @content;
+        }
+}
+
+@mixin eggplant(){
+        .theme-eggplant & {
+                @content;
+        }
+}
+
+@mixin fuchsia(){
+       .theme-fuchsia & {
+               @content;
+       }
+}
+
+@mixin goth(){
+        .theme-goth & {
+                @content;
+        }
+}
+
+@mixin lawn(){
+        .theme-lawn & {
+                @content;
+        }
+}
+
+@mixin neapolitan(){
+        .theme-neapolitan & {
+                @content;
+        }
+}
+
+@mixin sky(){
+        .theme-sky & {
+                @content;
+        }
+}
+
+@mixin sunset(){
+        .theme-sunset & {
+                @content;
+        }
+}
+
+@mixin phosphor(){
+        .theme-phosphor & {
+                @content;
+        }
+}
+
+$default1: #f9b18b;
+$default2: #f2ced5;
+$default3: #f8f4e3;
+$default4: #706c61;
+$default5: #2a2b2a;
+
+$eggplant1: #a66fde;
+$eggplant2: #7e15e8;
+$eggplant3: #661fad;
+$eggplant4: #5602ab;
+$eggplant5: #320F57;
+
+$fuchsia1: #ff2c55;
+$fuchsia2: #e2294f;
+$fuchsia3: #c41e3d;
+$fuchsia4: #7d1128;
+$fuchsia5: #3c0919;
+
+$goth1: #292929;
+$goth2: #610606;
+$goth3: #3a0404;
+$goth4: #260202;
+$goth5: #010101;
+
+$lawn1: #c7fdc4;
+$lawn2: #4ee345;
+$lawn3: #6ba368;
+$lawn4: #515b3a;
+$lawn5: #353d2f;
+
+$neapolitan1: #f8a3df;
+$neapolitan2: #f3e5ab;
+$neapolitan3: #2e210e;
+$neapolitan4: #ffd59a;
+$neapolitan5: #6e4201;
+
+$sky1: #23c4fa;
+$sky2: #15b1e6;
+$sky3: #2290b5;
+$sky4: #2387a8;
+$sky5: #205b6f;
+
+$sunset1: #fabc3c;
+$sunset2: #ffb238;
+$sunset3: #f19143;
+$sunset4: #ff773d;
+$sunset5: #f55536;
+
+$phosphor1: #2aad2a;
+$phosphor2: #125e12;
+$phosphor3: #184a18;
+$phosphor4: #001100;
+$phosphor5: #141414;
