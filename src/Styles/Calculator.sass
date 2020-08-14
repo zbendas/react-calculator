@@ -1,207 +1,201 @@
 @use 'sass:color'
 @use 'themes'
+@use 'media'
 
 body
     padding: 0
     margin: 0
 
-.themed
-    width: 100vw
-    height: 100vh
-    display: flex
-    flex-flow: column
-    align-items: center
-    justify-content: center
+*
+    touch-action: manipulation // Prevent double-tap zooms
+
+#Calculator
+    width: 500px
+    height: 700px
+    border: 8px solid
+    padding: 10px
+    display: grid
+    grid-template-areas: "readout readout readout readout" "button_clear button_clearEntry button_divide button_multiply" "button_7 button_8 button_9 button_plus"  "button_4 button_5 button_6 button_plus"  "button_1 button_2 button_3 button_minus" "button_0 button_0 button_period button_equals"
+    grid-template-columns: repeat(4, 25%)
+    grid-template-rows: 150px repeat(5, calc(550px / 5))
+    @include media.small_screen()
+        width: 100%
+        height: 100%
+        border: none
+        padding: 0
+        grid-template-rows: 20% 1fr 1fr 1fr 1fr 1fr
     @include themes.default()
-        background: themes.$default5
+        background: themes.$default4
+        border-color: color.adjust(themes.$default4, $lightness: -30%)
+        box-shadow: 10px 10px 15px color.adjust(themes.$default5, $lightness: -80%)
     @include themes.eggplant()
-        background: color.adjust(themes.$eggplant5, $lightness: -10%)
+        background: themes.$eggplant4
+        border-color: color.adjust(themes.$eggplant4, $lightness: -20%)
+        box-shadow: 10px 10px 15px color.adjust(themes.$eggplant5, $lightness: -80%)
     @include themes.fuchsia()
-        background: color.adjust(themes.$fuchsia5, $lightness: -10%)
+        background: themes.$fuchsia4
+        border-color: color.adjust(themes.$fuchsia4, $lightness: -20%)
+        box-shadow: 10px 10px 15px color.adjust(themes.$fuchsia5, $lightness: -80%)
     @include themes.goth()
-        background: themes.$goth5
+        background: themes.$goth4
+        border-color: color.adjust(themes.$goth4, $lightness: 5%)
+        box-shadow: 10px 10px 15px color.adjust(themes.$goth5, $lightness: -80%)
     @include themes.lawn()
-        background: color.adjust(themes.$lawn5, $lightness: -10%)
+        background: themes.$lawn4
+        border-color: color.adjust(themes.$lawn4, $lightness: -15%)
+        box-shadow: 10px 10px 15px color.adjust(themes.$lawn5, $lightness: -80%)
     @include themes.neapolitan()
-        background: themes.$neapolitan4
+        background: themes.$neapolitan3
+        border-color: color.adjust(themes.$neapolitan3, $lightness: -5%)
+        box-shadow: 10px 10px 15px color.adjust(themes.$neapolitan5, $lightness: -80%)
     @include themes.sky()
-        background: color.adjust(themes.$sky5, $lightness: -20%)
+        background: themes.$sky4
+        border-color: color.adjust(themes.$sky4, $lightness: -30%)
+        box-shadow: 10px 10px 15px color.adjust(themes.$sky5, $lightness: -80%)
     @include themes.sunset()
-        background: color.adjust(themes.$sunset5, $lightness: -50%)
+        background: themes.$sunset4
+        border-color: color.adjust(themes.$sunset4, $lightness: -30%)
+        box-shadow: 10px 10px 15px color.adjust(themes.$sunset5, $lightness: -80%)
     @include themes.phosphor()
-        background: repeating-linear-gradient(to bottom, color.adjust(themes.$phosphor4, $lightness: -5%) 0%, color.adjust(themes.$phosphor4, $lightness: -5%) 1%, themes.$phosphor4 1.1%, color.adjust(themes.$phosphor4, $lightness: -5%) 1.2%)
+        background: themes.$phosphor4
+        border-color: color.adjust(themes.$phosphor4, $lightness: 2.5%)
+        box-shadow: 10px 10px 15px color.adjust(themes.$phosphor5, $lightness: -80%)
     @include themes.pink()
-        background: themes.$pink5
+        background: themes.$pink4
+        border-color: color.adjust(themes.$pink4, $lightness: 5%)
+        box-shadow: 10px 10px 15px color.adjust(themes.$pink5, $lightness: -15%)
 
-    #Calculator
-        width: 500px
-        height: 700px
-        padding: 10px
-        border: 8px solid
-        @include themes.default()
-            background: themes.$default4
-            border-color: color.adjust(themes.$default4, $lightness: -30%)
-            box-shadow: 10px 10px 15px color.adjust(themes.$default5, $lightness: -80%)
-        @include themes.eggplant()
-            background: themes.$eggplant4
-            border-color: color.adjust(themes.$eggplant4, $lightness: -20%)
-            box-shadow: 10px 10px 15px color.adjust(themes.$eggplant5, $lightness: -80%)
-        @include themes.fuchsia()
-            background: themes.$fuchsia4
-            border-color: color.adjust(themes.$fuchsia4, $lightness: -20%)
-            box-shadow: 10px 10px 15px color.adjust(themes.$fuchsia5, $lightness: -80%)
-        @include themes.goth()
-            background: themes.$goth4
-            border-color: color.adjust(themes.$goth4, $lightness: 5%)
-            box-shadow: 10px 10px 15px color.adjust(themes.$goth5, $lightness: -80%)
-        @include themes.lawn()
-            background: themes.$lawn4
-            border-color: color.adjust(themes.$lawn4, $lightness: -15%)
-            box-shadow: 10px 10px 15px color.adjust(themes.$lawn5, $lightness: -80%)
-        @include themes.neapolitan()
-            background: themes.$neapolitan3
-            border-color: color.adjust(themes.$neapolitan3, $lightness: -5%)
-            box-shadow: 10px 10px 15px color.adjust(themes.$neapolitan5, $lightness: -80%)
-        @include themes.sky()
-            background: themes.$sky4
-            border-color: color.adjust(themes.$sky4, $lightness: -30%)
-            box-shadow: 10px 10px 15px color.adjust(themes.$sky5, $lightness: -80%)
-        @include themes.sunset()
-            background: themes.$sunset4
-            border-color: color.adjust(themes.$sunset4, $lightness: -30%)
-            box-shadow: 10px 10px 15px color.adjust(themes.$sunset5, $lightness: -80%)
-        @include themes.phosphor()
-            background: themes.$phosphor4
-            border-color: color.adjust(themes.$phosphor4, $lightness: 2.5%)
-            box-shadow: 10px 10px 15px color.adjust(themes.$phosphor5, $lightness: -80%)
-        @include themes.pink()
-            background: themes.$pink4
-            border-color: color.adjust(themes.$pink4, $lightness: 5%)
-            box-shadow: 10px 10px 15px color.adjust(themes.$pink5, $lightness: -15%)
-        display: grid
-        grid-template-areas: "readout readout readout readout" "button_clear button_clearEntry button_divide button_multiply" "button_7 button_8 button_9 button_plus"  "button_4 button_5 button_6 button_plus"  "button_1 button_2 button_3 button_minus" "button_0 button_0 button_period button_equals"
-        grid-template-columns: repeat(4, 25%)
-        grid-template-rows: 150px repeat(5, calc(550px / 5))
-
-    #readout
+#readout
+    margin-top: 10px
+    margin-bottom: 10px
+    grid-area: readout
+    justify-self: center
+    align-self: center
+    box-sizing: border-box
+    border: 5px solid
+    @include media.small_screen()
+        width: 90%
+        height: 100px
+    @include media.medium_screen()
+        // Same as large
         width: 100%
         height: 125px
-        margin-top: 10px
-        margin-bottom: 10px
-        grid-area: readout
-        box-sizing: border-box
-        border: 5px solid
-        @include themes.default()
-            background: color.adjust(themes.$default5, $lightness: -20%)
-            border-left-color: themes.$default2
-            border-right-color: themes.$default2
-            border-top-color: color.adjust(themes.$default2, $lightness: -30%)
-            border-bottom-color: color.adjust(themes.$default2, $lightness: -30%)
-        @include themes.eggplant()
-            background: color.adjust(themes.$eggplant5, $lightness: -80%)
-            border-left-color: themes.$eggplant2
-            border-right-color: themes.$eggplant2
-            border-top-color: color.adjust(themes.$eggplant2, $lightness: -30%)
-            border-bottom-color: color.adjust(themes.$eggplant2, $lightness: -30%)
-        @include themes.fuchsia()
-            background: color.adjust(themes.$fuchsia5, $lightness: -20%)
-            border-left-color: themes.$fuchsia2
-            border-right-color: themes.$fuchsia2
-            border-top-color: color.adjust(themes.$fuchsia2, $lightness: -30%)
-            border-bottom-color: color.adjust(themes.$fuchsia2, $lightness: -30%)
-        @include themes.goth()
-            background: color.adjust(themes.$goth5, $lightness: -20%)
-            border-left-color: themes.$goth2
-            border-right-color: themes.$goth2
-            border-top-color: color.adjust(themes.$goth2, $lightness: -10%)
-            border-bottom-color: color.adjust(themes.$goth2, $lightness: -10%)
-        @include themes.lawn()
-            background: color.adjust(themes.$lawn5, $lightness: -80%)
-            border-left-color: themes.$lawn2
-            border-right-color: themes.$lawn2
-            border-top-color: color.adjust(themes.$lawn2, $lightness: -30%)
-            border-bottom-color: color.adjust(themes.$lawn2, $lightness: -30%)
-        @include themes.neapolitan()
-            background: themes.$neapolitan2
-            border-left-color: themes.$neapolitan1
-            border-right-color: themes.$neapolitan1
-            border-top-color: color.adjust(themes.$neapolitan1, $lightness: -30%, $saturation: -40%)
-            border-bottom-color: color.adjust(themes.$neapolitan1, $lightness: -30%, $saturation: -40%)
-        @include themes.sky()
-            background: color.adjust(themes.$sky5, $lightness: -20%)
-            border-left-color: themes.$sky2
-            border-right-color: themes.$sky2
-            border-top-color: color.adjust(themes.$sky2, $lightness: -30%)
-            border-bottom-color: color.adjust(themes.$sky2, $lightness: -30%)
-        @include themes.sunset()
-            background: color.adjust(themes.$sunset5, $lightness: -80%)
-            border-left-color: themes.$sunset2
-            border-right-color: themes.$sunset2
-            border-top-color: color.adjust(themes.$sunset2, $lightness: -30%)
-            border-bottom-color: color.adjust(themes.$sunset2, $lightness: -30%)
-        @include themes.phosphor()
-            background: color.adjust(themes.$phosphor5, $lightness: -15%)
-            border-left-color: themes.$phosphor2
-            border-right-color: themes.$phosphor2
-            border-top-color: color.adjust(themes.$phosphor2, $lightness: -10%)
-            border-bottom-color: color.adjust(themes.$phosphor2, $lightness: -10%)
-        @include themes.pink()
-            background: color.adjust(themes.$pink5, $lightness: -5%)
-            border-left-color: themes.$pink2
-            border-right-color: themes.$pink2
-            border-top-color: color.adjust(themes.$pink2, $lightness: -20%)
-            border-bottom-color: color.adjust(themes.$pink2, $lightness: -20%)
-        position: relative
-        display: flex
-        justify-content: center
+    @include media.large_screen()
+        width: 100%
+        height: 125px
+    @include themes.default()
+        background: color.adjust(themes.$default5, $lightness: -20%)
+        border-left-color: themes.$default2
+        border-right-color: themes.$default2
+        border-top-color: color.adjust(themes.$default2, $lightness: -30%)
+        border-bottom-color: color.adjust(themes.$default2, $lightness: -30%)
+    @include themes.eggplant()
+        background: color.adjust(themes.$eggplant5, $lightness: -80%)
+        border-left-color: themes.$eggplant2
+        border-right-color: themes.$eggplant2
+        border-top-color: color.adjust(themes.$eggplant2, $lightness: -30%)
+        border-bottom-color: color.adjust(themes.$eggplant2, $lightness: -30%)
+    @include themes.fuchsia()
+        background: color.adjust(themes.$fuchsia5, $lightness: -20%)
+        border-left-color: themes.$fuchsia2
+        border-right-color: themes.$fuchsia2
+        border-top-color: color.adjust(themes.$fuchsia2, $lightness: -30%)
+        border-bottom-color: color.adjust(themes.$fuchsia2, $lightness: -30%)
+    @include themes.goth()
+        background: color.adjust(themes.$goth5, $lightness: -20%)
+        border-left-color: themes.$goth2
+        border-right-color: themes.$goth2
+        border-top-color: color.adjust(themes.$goth2, $lightness: -10%)
+        border-bottom-color: color.adjust(themes.$goth2, $lightness: -10%)
+    @include themes.lawn()
+        background: color.adjust(themes.$lawn5, $lightness: -80%)
+        border-left-color: themes.$lawn2
+        border-right-color: themes.$lawn2
+        border-top-color: color.adjust(themes.$lawn2, $lightness: -30%)
+        border-bottom-color: color.adjust(themes.$lawn2, $lightness: -30%)
+    @include themes.neapolitan()
+        background: themes.$neapolitan2
+        border-left-color: themes.$neapolitan1
+        border-right-color: themes.$neapolitan1
+        border-top-color: color.adjust(themes.$neapolitan1, $lightness: -30%, $saturation: -40%)
+        border-bottom-color: color.adjust(themes.$neapolitan1, $lightness: -30%, $saturation: -40%)
+    @include themes.sky()
+        background: color.adjust(themes.$sky5, $lightness: -20%)
+        border-left-color: themes.$sky2
+        border-right-color: themes.$sky2
+        border-top-color: color.adjust(themes.$sky2, $lightness: -30%)
+        border-bottom-color: color.adjust(themes.$sky2, $lightness: -30%)
+    @include themes.sunset()
+        background: color.adjust(themes.$sunset5, $lightness: -80%)
+        border-left-color: themes.$sunset2
+        border-right-color: themes.$sunset2
+        border-top-color: color.adjust(themes.$sunset2, $lightness: -30%)
+        border-bottom-color: color.adjust(themes.$sunset2, $lightness: -30%)
+    @include themes.phosphor()
+        background: color.adjust(themes.$phosphor5, $lightness: -15%)
+        border-left-color: themes.$phosphor2
+        border-right-color: themes.$phosphor2
+        border-top-color: color.adjust(themes.$phosphor2, $lightness: -10%)
+        border-bottom-color: color.adjust(themes.$phosphor2, $lightness: -10%)
+    @include themes.pink()
+        background: color.adjust(themes.$pink5, $lightness: -5%)
+        border-left-color: themes.$pink2
+        border-right-color: themes.$pink2
+        border-top-color: color.adjust(themes.$pink2, $lightness: -20%)
+        border-bottom-color: color.adjust(themes.$pink2, $lightness: -20%)
+    position: relative
+    display: flex
+    justify-content: center
 
-        span.result
-            position: absolute
-            top: 50%
-            transform: translate(0, -50%)
-            width: 95%
-            text-align: right
-            font-family: monospace
-            font-size: 64px
-            color: white
+    span.result
+        position: absolute
+        top: 50%
+        transform: translate(0, -50%)
+        width: 95%
+        text-align: right
+        font-family: monospace
+        @include media.small_screen()
+            font-size: 48px
+        font-size: 64px
+        color: white
+        @include themes.goth()
+            color: themes.$goth2
+        @include themes.neapolitan()
+            color: themes.$neapolitan5
+        @include themes.phosphor()
+            color: themes.$phosphor1
+        @include themes.pink()
+            color: themes.$pink2
+
+        &::selection
+            @include themes.default()
+                color: themes.$default2
+                background: themes.$default5
+            @include themes.eggplant()
+                color: themes.$eggplant2
+                background: themes.$eggplant5
+            @include themes.fuchsia()
+                color: themes.$fuchsia2
+                background: themes.$fuchsia5
             @include themes.goth()
                 color: themes.$goth2
+                background: color.adjust(themes.$goth5, $lightness: 30%)
+            @include themes.lawn()
+                color: themes.$lawn2
+                background: themes.$lawn5
             @include themes.neapolitan()
-                color: themes.$neapolitan5
+                color: themes.$neapolitan1
+                background: themes.$neapolitan5
+            @include themes.sky()
+                color: themes.$sky2
+                background: themes.$sky5
+            @include themes.sunset()
+                color: themes.$sunset2
+                background: themes.$sunset5
             @include themes.phosphor()
-                color: themes.$phosphor1
+                color: themes.$phosphor2
+                background: white
             @include themes.pink()
-                color: themes.$pink2
-
-            &::selection
-                @include themes.default()
-                    color: themes.$default2
-                    background: themes.$default5
-                @include themes.eggplant()
-                    color: themes.$eggplant2
-                    background: themes.$eggplant5
-                @include themes.fuchsia()
-                    color: themes.$fuchsia2
-                    background: themes.$fuchsia5
-                @include themes.goth()
-                    color: themes.$goth2
-                    background: color.adjust(themes.$goth5, $lightness: 30%)
-                @include themes.lawn()
-                    color: themes.$lawn2
-                    background: themes.$lawn5
-                @include themes.neapolitan()
-                    color: themes.$neapolitan1
-                    background: themes.$neapolitan5
-                @include themes.sky()
-                    color: themes.$sky2
-                    background: themes.$sky5
-                @include themes.sunset()
-                    color: themes.$sunset2
-                    background: themes.$sunset5
-                @include themes.phosphor()
-                    color: themes.$phosphor2
-                    background: white
-                @include themes.pink()
-                    color: themes.$pink1
-                    background: themes.$pink5
+                color: themes.$pink1
+                background: themes.$pink5
 

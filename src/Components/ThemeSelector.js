@@ -10,24 +10,16 @@ class ThemeSelector extends Component {
         this.handleSelection = this.handleSelection.bind(this);
 
         this.state = {
-            icon: "⮞",
+            icon: "➤",
             open: false,
-            selectedTheme: localStorage.getItem('theme') || 'default'
+            selectedTheme: localStorage.getItem('theme') || 'default',
         };
 
         document.body.classList.add(`theme-${this.state.selectedTheme}`);
     }
 
     open() {
-        if (!this.state.open) {
-            document.getElementById("themeSidebar").style.width = "250px";
-            document.getElementById("openSidebar").style.left = "250px";
-            this.setState({open: true});
-        } else {
-            document.getElementById("themeSidebar").style.width = "0px";
-            document.getElementById("openSidebar").style.left = "0px";
-            this.setState({open: false});
-        }
+        this.setState({open: !this.state.open});
     }
 
     keyOpen(e) {
@@ -48,12 +40,12 @@ class ThemeSelector extends Component {
     render() {
         return (
             <div className={"themed"}>
-                <button id={"openSidebar"}
-                        className={this.state.open ? "close" : ""}
+                <button id={"openButton"}
+                        className={this.state.open ? "open" : "closed"}
                         onClick={this.open} onKeyDown={this.keyOpen}
                         tabIndex={"0"}>{this.state.icon}
                 </button>
-                <section id={"themeSidebar"}>
+                <section id={"themeSidebar"} className={this.state.open ? "open" : "closed"}>
                     <h1>Themes</h1>
                     <fieldset>
                         {['default', 'eggplant', 'fuchsia', 'goth', 'lawn', 'neapolitan', 'sky', 'sunset', 'phosphor', 'pink',].map((item) => {

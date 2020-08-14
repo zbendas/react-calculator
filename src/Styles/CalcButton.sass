@@ -2,6 +2,9 @@
 @use 'themes'
 
 .CalcButton
+    margin: 5px
+    cursor: pointer
+    position: relative
     @include themes.default()
         background: themes.$default1
     @include themes.eggplant()
@@ -22,13 +25,15 @@
         background: themes.$phosphor1
     @include themes.pink()
         background: themes.$pink1
-    margin: 5px
-    cursor: pointer
-    position: relative
     span.text
         width: 100%
         font-size: 64px
         font-family: 'Recursive', sans-serif
+        text-align: center
+        position: absolute
+        top: 50%
+        transform: translate(0, -50%)
+        user-select: none
         color: white
         @include themes.lawn()
             color: color.adjust(themes.$lawn1, $lightness: -30%, $saturation: -20%)
@@ -40,11 +45,6 @@
             color: themes.$phosphor5
         @include themes.pink()
             color: themes.$pink5
-        text-align: center
-        position: absolute
-        top: 50%
-        transform: translate(0, -50%)
-        user-select: none
     &:hover
         @include themes.default()
             background: color.adjust(themes.$default1, $lightness: -10%)

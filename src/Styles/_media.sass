@@ -1,0 +1,15 @@
+$small: 600px // phones and smaller
+$medium: 768px
+$large: 992px
+
+@mixin small_screen()
+    @media only screen and (max-width: $small)
+        @content
+
+@mixin medium_screen()
+    @media only screen and (min-width: $medium)
+        @content
+
+@mixin large_screen()
+    @media only screen and (min-width: $large)
+        @content

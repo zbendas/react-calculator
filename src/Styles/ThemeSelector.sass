@@ -1,13 +1,71 @@
 @use 'sass:color'
 @use 'themes'
+@use 'media'
+
+.themed
+    width: 100vw
+    height: 100vh
+    display: flex
+    flex-flow: column
+    align-items: center
+    justify-content: center
+    @include themes.default()
+        background: themes.$default5
+    @include themes.eggplant()
+        background: color.adjust(themes.$eggplant5, $lightness: -10%)
+    @include themes.fuchsia()
+        background: color.adjust(themes.$fuchsia5, $lightness: -5%)
+    @include themes.goth()
+        background: themes.$goth5
+    @include themes.lawn()
+        background: color.adjust(themes.$lawn5, $lightness: -10%)
+    @include themes.neapolitan()
+        background: themes.$neapolitan4
+    @include themes.sky()
+        background: color.adjust(themes.$sky5, $lightness: -20%)
+    @include themes.sunset()
+        background: color.adjust(themes.$sunset5, $lightness: -50%)
+    @include themes.phosphor()
+        background: repeating-linear-gradient(to bottom, color.adjust(themes.$phosphor4, $lightness: -5%) 0%, color.adjust(themes.$phosphor4, $lightness: -5%) 1%, themes.$phosphor4 1.1%, color.adjust(themes.$phosphor4, $lightness: -5%) 1.2%)
+    @include themes.pink()
+        background: themes.$pink5
 
 #themeSidebar
-    height: 100%
-    width: 0
     position: fixed
     z-index: 1
     top: 0
     left: 0
+    overflow-x: hidden
+    transition: width 0.25s, height 0.25s
+    display: flex
+    flex-direction: column
+    align-items: center
+    font-family: "Recursive", sans-serif
+    &.closed
+        // Slide from top for medium or smaller
+        @include media.small_screen()
+            height: 0
+            width: 100%
+            transition: height 0.25s
+        @include media.medium_screen()
+            height: 0
+            width: 100%
+        // Slide from left for large screens
+        @include media.large_screen()
+            height: 100%
+            width: 0
+    &.open
+        @include media.small_screen()
+            width: 100%
+            height: 100%
+            transition: height 0.25s
+        @include media.medium_screen()
+            width: 100%
+            height: 50%
+            box-shadow: 10px 0 15px black
+        @include media.large_screen()
+            width: 250px
+            height: 100%
     @include themes.default()
         background: color.adjust(themes.$default5, $lightness: 10%)
     @include themes.eggplant()
@@ -28,17 +86,12 @@
         background: themes.$phosphor5
     @include themes.pink()
         background: color.adjust(themes.$pink5, $lightness: -5%)
-    overflow-x: hidden
-    padding-top: 40px
-    transition: all 0.25s
-    display: flex
-    flex-direction: column
-    align-items: center
-    font-family: "Recursive", sans-serif
     color: white
     h1
         font-size: 32px
         text-decoration: underline
+        @include media.large_screen()
+            margin-top: 40px
     fieldset
         margin: 0
         padding: 0
@@ -90,22 +143,36 @@
                     color: color.adjust(themes.$pink3, $saturation: 30%)
         label
             text-transform: capitalize
-            font-size: 24px
             margin: 15px 5px
             position: relative
             cursor: pointer
+            @include media.small_screen()
+                font-size: 24px
+            @include media.medium_screen()
+                font-size: 18px
+            @include media.large_screen()
+                font-size: 24px
             &:focus
                 outline: none
             &:before
                 position: absolute
-                top: 8px
                 left: -25px
                 width: 9px
                 height: 9px
-                border-radius: 9px
-                border: 3px solid white
                 content: ""
                 background: white
+                @include media.small_screen()
+                    top: 8px
+                    border-radius: 9px
+                    border: 3px solid white
+                @include media.medium_screen()
+                    top: 5px
+                    border-radius: 6px
+                    border: 2px solid white
+                @include media.large_screen()
+                    top: 8px
+                    border-radius: 9px
+                    border: 3px solid white
         input[type="radio"]
             opacity: 0
             position: fixed
@@ -134,17 +201,48 @@
                 @include themes.pink()
                     background: themes.$pink5
 
-#openSidebar
+#openButton
     appearance: none
     display: inline
     background: none
     border: none
     position: absolute
-    top: 50%
-    transform: translate(0, -50%)
-    left: 0
     padding: 10px
     font-size: 64px
+    z-index: 999
+    &.open
+        @include media.small_screen()
+            height: initial
+            top: 90%
+            left: 50%
+            transform: translate(-50%, 0) rotate(270deg)
+            transition: none
+        @include media.medium_screen()
+            top: 42.5%
+            left: 50%
+            transform: translate(-50%, 0) rotate(270deg)
+            transition: transform 0.25s
+        @include media.large_screen()
+            transform: translate(0, -50%) rotate(180deg)
+            transition: transform 0.25s, left 0.25s
+            left: 250px
+            top: 50%
+    &.closed
+        @include media.small_screen()
+            height: 20%
+            top: 0
+            left: 5%
+            transition: none
+        @include media.medium_screen()
+            top: 1%
+            left: 50%
+            transform: translate(-50%, 0) rotate(90deg)
+            transition: transform 0.25s
+        @include media.large_screen()
+            top: 50%
+            left: 0
+            transform: translate(0, -50%)
+            transition: transform 0.25s, left 0.25s
     cursor: pointer
     @include themes.default()
         color: color.adjust(themes.$default2, $lightness: -10%)
@@ -189,6 +287,3 @@
             color: color.adjust(themes.$phosphor3, $lightness: 10%)
         @include themes.pink()
             color: themes.$pink2
-    &.close
-        transform: scaleX(-1)
-        transition: 0.125s
