@@ -1,6 +1,9 @@
 {
   "name": "react-calculator",
   "version": "0.1.0",
+  "engines": {
+    "node": "14.7.0"
+  },
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
@@ -8,11 +11,14 @@
     "@testing-library/user-event": "^7.1.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-scripts": "3.4.2"
+    "react-scripts": "3.4.2",
+    "sass": "^1.26.10"
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build-css": "sass ./src",
+    "build": "npm run build-css && react-scripts build",
+    "heroku-postbuild": "npm run build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
