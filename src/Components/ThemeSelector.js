@@ -49,14 +49,14 @@ class ThemeSelector extends Component {
         return (
             <div className={"themed"}>
                 <button id={"openSidebar"}
-                      className={this.state.open ? "close" : ""}
-                      onClick={this.open} onKeyDown={this.keyOpen}
-                      tabIndex={"0"}>{this.state.icon}
+                        className={this.state.open ? "close" : ""}
+                        onClick={this.open} onKeyDown={this.keyOpen}
+                        tabIndex={"0"}>{this.state.icon}
                 </button>
                 <section id={"themeSidebar"}>
                     <h1>Themes</h1>
                     <fieldset>
-                        {['default', 'eggplant', 'fuchsia', 'goth', 'lawn', 'neapolitan', 'sky', 'sunset', 'phosphor',].map((item) => {
+                        {['default', 'eggplant', 'fuchsia', 'goth', 'lawn', 'neapolitan', 'sky', 'sunset', 'phosphor', 'pink',].map((item) => {
                             return <ThemeOption key={`option-${item}`} name={"theme"} text={item}
                                                 tabbable={this.state.open}
                                                 checked={item === this.state.selectedTheme}

@@ -30,6 +30,8 @@ body
         background: color.adjust(themes.$sunset5, $lightness: -50%)
     @include themes.phosphor()
         background: repeating-linear-gradient(to bottom, color.adjust(themes.$phosphor4, $lightness: -5%) 0%, color.adjust(themes.$phosphor4, $lightness: -5%) 1%, themes.$phosphor4 1.1%, color.adjust(themes.$phosphor4, $lightness: -5%) 1.2%)
+    @include themes.pink()
+        background: themes.$pink5
 
     #Calculator
         width: 500px
@@ -72,6 +74,10 @@ body
             background: themes.$phosphor4
             border-color: color.adjust(themes.$phosphor4, $lightness: 2.5%)
             box-shadow: 10px 10px 15px color.adjust(themes.$phosphor5, $lightness: -80%)
+        @include themes.pink()
+            background: themes.$pink4
+            border-color: color.adjust(themes.$pink4, $lightness: 5%)
+            box-shadow: 10px 10px 15px color.adjust(themes.$pink5, $lightness: -15%)
         display: grid
         grid-template-areas: "readout readout readout readout" "button_clear button_clearEntry button_divide button_multiply" "button_7 button_8 button_9 button_plus"  "button_4 button_5 button_6 button_plus"  "button_1 button_2 button_3 button_minus" "button_0 button_0 button_period button_equals"
         grid-template-columns: repeat(4, 25%)
@@ -139,6 +145,12 @@ body
             border-right-color: themes.$phosphor2
             border-top-color: color.adjust(themes.$phosphor2, $lightness: -10%)
             border-bottom-color: color.adjust(themes.$phosphor2, $lightness: -10%)
+        @include themes.pink()
+            background: color.adjust(themes.$pink5, $lightness: -5%)
+            border-left-color: themes.$pink2
+            border-right-color: themes.$pink2
+            border-top-color: color.adjust(themes.$pink2, $lightness: -20%)
+            border-bottom-color: color.adjust(themes.$pink2, $lightness: -20%)
         position: relative
         display: flex
         justify-content: center
@@ -158,6 +170,8 @@ body
                 color: themes.$neapolitan5
             @include themes.phosphor()
                 color: themes.$phosphor1
+            @include themes.pink()
+                color: themes.$pink2
 
             &::selection
                 @include themes.default()
@@ -187,4 +201,7 @@ body
                 @include themes.phosphor()
                     color: themes.$phosphor2
                     background: white
+                @include themes.pink()
+                    color: themes.$pink1
+                    background: themes.$pink5
 

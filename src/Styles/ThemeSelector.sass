@@ -26,6 +26,8 @@
         background: color.adjust(themes.$sunset5, $lightness: -40%)
     @include themes.phosphor()
         background: themes.$phosphor5
+    @include themes.pink()
+        background: color.adjust(themes.$pink5, $lightness: -5%)
     overflow-x: hidden
     padding-top: 40px
     transition: all 0.25s
@@ -61,28 +63,31 @@
                     color: themes.$sunset2
                 @include themes.phosphor()
                     color: themes.$phosphor1
+                @include themes.pink()
+                    color: themes.$pink2
             &:focus
                 outline: none
                 color: color.adjust(white, $lightness: -40%)
-                & input[type="radio"] + label:before
-                    @include themes.default()
-                        background: themes.$default4
-                    @include themes.eggplant()
-                        background: themes.$eggplant2
-                    @include themes.fuchsia()
-                        background: themes.$fuchsia2
-                    @include themes.goth()
-                        background: themes.$goth2
-                    @include themes.lawn()
-                        background: themes.$lawn2
-                    @include themes.neapolitan()
-                        background: themes.$neapolitan1
-                    @include themes.sky()
-                        background: themes.$sky2
-                    @include themes.sunset()
-                        background: themes.$sunset2
-                    @include themes.phosphor()
-                        background: themes.$phosphor1
+                @include themes.default()
+                    color: themes.$default4
+                @include themes.eggplant()
+                    color: themes.$eggplant2
+                @include themes.fuchsia()
+                    color: themes.$fuchsia2
+                @include themes.goth()
+                    color: themes.$goth2
+                @include themes.lawn()
+                    color: themes.$lawn2
+                @include themes.neapolitan()
+                    color: themes.$neapolitan1
+                @include themes.sky()
+                    color: themes.$sky2
+                @include themes.sunset()
+                    color: themes.$sunset2
+                @include themes.phosphor()
+                    color: themes.$phosphor1
+                @include themes.pink()
+                    color: color.adjust(themes.$pink3, $saturation: 30%)
         label
             text-transform: capitalize
             font-size: 24px
@@ -126,6 +131,8 @@
                 @include themes.phosphor()
                     background: themes.$phosphor2
                     border-color: themes.$phosphor1
+                @include themes.pink()
+                    background: themes.$pink5
 
 #openSidebar
     appearance: none
@@ -157,6 +164,8 @@
         color: color.adjust(themes.$sunset5, $lightness: -20%)
     @include themes.phosphor()
         color: themes.$phosphor3
+    @include themes.pink()
+        color: themes.$pink3
     line-height: 25px
     &:hover, &:focus
         outline: none
@@ -178,6 +187,8 @@
             color: themes.$sunset5
         @include themes.phosphor()
             color: color.adjust(themes.$phosphor3, $lightness: 10%)
+        @include themes.pink()
+            color: themes.$pink2
     &.close
         transform: scaleX(-1)
         transition: 0.125s

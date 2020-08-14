@@ -20,6 +20,8 @@
         background: themes.$sunset1
     @include themes.phosphor()
         background: themes.$phosphor1
+    @include themes.pink()
+        background: themes.$pink1
     margin: 5px
     cursor: pointer
     position: relative
@@ -36,6 +38,8 @@
             color: themes.$goth2
         @include themes.phosphor()
             color: themes.$phosphor5
+        @include themes.pink()
+            color: themes.$pink5
         text-align: center
         position: absolute
         top: 50%
@@ -60,6 +64,8 @@
             background: color.adjust(themes.$sunset1, $lightness: -10%)
         @include themes.phosphor()
             background: color.adjust(themes.$phosphor1, $lightness: -10%)
+        @include themes.pink()
+            background: color.adjust(themes.$pink1, $lightness: -10%)
     &:active
         @include themes.default()
             background: color.adjust(themes.$default1, $lightness: -20%)
@@ -79,6 +85,8 @@
             background: color.adjust(themes.$sunset1, $lightness: -20%)
         @include themes.phosphor()
             background: color.adjust(themes.$phosphor1, $lightness: -20%)
+        @include themes.pink()
+            background: color.adjust(themes.$pink1, $lightness: -20%)
     &.function
         @include themes.default()
             background: themes.$default3
@@ -98,6 +106,8 @@
             background: themes.$sunset3
         @include themes.phosphor()
             background: themes.$phosphor3
+        @include themes.pink()
+            background: themes.$pink3
         span.text
             @include themes.default()
                 color: color.adjust(themes.$default2, $lightness: -20%)
@@ -109,6 +119,8 @@
                 color: themes.$neapolitan2
             @include themes.phosphor()
                 color: color.adjust(themes.$phosphor5, $lightness: 50%)
+            @include themes.pink()
+                color: color.adjust(themes.$pink1, $lightness: 5%)
         &:hover
             @include themes.default()
                 background: color.adjust(themes.$default3, $lightness: -10%)
@@ -128,6 +140,8 @@
                 background: color.adjust(themes.$sunset3, $lightness: -10%)
             @include themes.phosphor()
                 background: color.adjust(themes.$phosphor3, $lightness: -10%)
+            @include themes.pink()
+                background: color.adjust(themes.$pink3, $lightness: -10%)
         &:active
             @include themes.default()
                 background: color.adjust(themes.$default3, $lightness: -20%)
@@ -147,3 +161,5 @@
                 background: color.adjust(themes.$sunset3, $lightness: -20%)
             @include themes.phosphor()
                 background: color.adjust(themes.$phosphor3, $lightness: -20%)
+            @include themes.pink()
+                background: color.adjust(themes.$pink3, $lightness: -20%)

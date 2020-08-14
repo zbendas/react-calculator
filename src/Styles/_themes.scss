@@ -55,6 +55,12 @@
         }
 }
 
+@mixin pink(){
+        .theme-pink & {
+                @content;
+        }
+}
+
 $default1: #f9b18b;
 $default2: #f2ced5;
 $default3: #f8f4e3;
@@ -102,6 +108,12 @@ $sunset2: #ffb238;
 $sunset3: #f19143;
 $sunset4: #ff773d;
 $sunset5: #f55536;
+
+$pink1: #f5dce0;
+$pink2: #efcfd4;
+$pink3: #ecbdc4;
+$pink4: #e4a0b7;
+$pink5: #e18aaa;
 
 $phosphor1: #2aad2a;
 $phosphor2: #125e12;
